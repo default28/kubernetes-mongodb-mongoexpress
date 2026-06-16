@@ -10,18 +10,6 @@ This project demonstrates deployment of MongoDB and Mongo Express on Kubernetes 
 - Secrets
 - Minikube
 
-## Architecture
-
-Browser
-↓
-Mongo Express Service
-↓
-Mongo Express Pod
-↓
-MongoDB Service
-↓
-MongoDB Pod
-
 ## Components
 
 ### MongoDB
@@ -53,31 +41,11 @@ minikube service mongo-express-service
 - Secrets
 - Service Discovery
 
-## Architecture
-+----------------+
-|    Browser     |
-+----------------+
-|
-v
-+----------------------+
-| Mongo Express Service|
-+----------------------+
-|
-v
-+----------------------+
-| Mongo Express Pod    |
-+----------------------+
-|
-v
-+----------------------+
-| MongoDB Service      |
-+----------------------+
-|
-v
-+----------------------+
-| MongoDB Pod          |
-+----------------------+
+## Documentation
 
+- [Architecture](docs/architecture.md)
+
+## Commands
 kubectl apply -f mongo-secret.yaml
 kubectl get secret
 
@@ -89,15 +57,14 @@ kubectl get pod --watch
 kubectl get all | grep mongodb
 
 kubectl apply -f mongo-configmap.yaml
-configmap/mongodb-configmap created
 kubectl apply -f mongo-express.yaml
 kubectl get pod
 kubectl get logs mongo-express-cfff
 
-kubectl get service
-external ip not assigned yet
+kubectl get service  -->  external ip not assigned yet
 
 minikube service mongo-express-service
 
+for mongo express ui login - 
 username - admin
 pass - pass
