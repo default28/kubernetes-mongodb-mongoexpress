@@ -46,6 +46,7 @@ minikube service mongo-express-service
 - [Architecture](docs/architecture.md)
 
 ## Commands
+```bash
 kubectl apply -f mongo-secret.yaml
 kubectl get secret
 
@@ -68,3 +69,4 @@ minikube service mongo-express-service
 for mongo express ui login - 
 username - admin
 pass - pass
+```
